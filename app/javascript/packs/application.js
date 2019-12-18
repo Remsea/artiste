@@ -44,8 +44,6 @@ sortable.on('mirror:attached', (evt) => {
   setTimeout(function(){evt.data.mirror.firstChild.classList.add('rotation');}, 100)
 
     // evt.data.mirror.firstChild.style.setProperty('transform','rotate(35deg)');
-    console.log(evt.data.mirror.firstChild);
-    console.log(evt.data.mirror.firstElementChild);
     }
   );
 

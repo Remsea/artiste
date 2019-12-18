@@ -3,6 +3,21 @@
   height: 400px;
 }
 
+.etiquette {
+  position:absolute;
+  top: -1.7em;
+  left: -1em;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  background-color:white;
+  opacity:0.8;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  color: #92929b;
+}
+
 .radius5 {
   border-radius:5px;
 }
@@ -24,7 +39,7 @@
 .grid {
 display: grid;
 grid: auto auto / 1fr 1fr;
-grid-gap: 10px;
+grid-gap: 20px;
 grid-template-areas:
 "capa building"
 "capa building"
@@ -47,8 +62,6 @@ padding: 15px;
 
 .atrier {
 width:fit-content;
-  padding-top:5px;
-  padding-bottom:5px;
 z-index:110;
 }
 
@@ -97,12 +110,13 @@ z-index:110;
   }
 
 .tricontainer, .notricontainer {
+  position:relative;
   transition: transform .4s cubic-bezier(.5,.2,.43,1.33);
   display: flex;
   flex-direction: column;
   min-height: 50px;
   width: 30em;
-  margin: auto;
+  margin: 5px 0px;
   background-color: lightgrey;
   margin-top: 20px;
   padding: 5px 0px;
@@ -129,19 +143,26 @@ z-index:110;
 
 @media(max-width: 362px) {
   body {
-    font-size:0.6rem;
+    font-size:0.4rem;
   }
   .grid {
 grid: auto / auto;
-grid-gap: 5px;
+grid-gap: 20px;
 grid-template-areas:
 "capa"
 "building"
 ;
+padding: 2px;
   }
   .tricontainer, .notricontainer {
-    margin:0px;
+    margin: 2px 0px;
+    width:25em;
   }
+
+  .tricontainer.capa, .notricontainer.capa {
+    margin-top:20px;
+  }
+
 }
 
 

@@ -34,10 +34,12 @@ const removeFormatContainer = (e) => {
 
 const updateCapacityContainer = (e) => {
   if(e.data.newContainer.dataset.capacity){
-      e.data.newContainer.dataset.capacity =parseInt(e.data.newContainer.dataset.capacity) - parseInt(e.data.dragEvent.data.source.dataset.capacity);
+      e.data.newContainer.dataset.capacity = parseInt(e.data.newContainer.dataset.capacity) - parseInt(e.data.dragEvent.data.source.dataset.capacity);
+      e.data.newContainer.querySelector('.etiquette').innerText = e.data.newContainer.dataset.capacity;
     }
   if (e.data.oldContainer.dataset.capacity){
     e.data.oldContainer.dataset.capacity = parseInt(e.data.oldContainer.dataset.capacity) + parseInt(e.data.dragEvent.data.source.dataset.capacity);
+    e.data.oldContainer.querySelector('.etiquette').innerText = e.data.oldContainer.dataset.capacity;
   }
 }
 
@@ -47,12 +49,15 @@ const resizeCapaBlock = (e) => {
   e.preventDefault();
   document.querySelectorAll('.atrier').forEach((element) => {
     element.firstChild.style.width = parseInt(element.dataset.capacity)/10 * size_factor + 'em';
-    element.firstChild.innerText = element.dataset.capacity;
+    element.lastElementChild.innerText = element.dataset.capacity;
   });
 
   document.querySelectorAll('.tricontainer').forEach((element) => {
     if (element.dataset.capacity)
-      {element.style.width = parseInt(element.dataset.capacity)/10 * size_factor2 + 'em';}
+      {
+        element.style.width = parseInt(element.dataset.capacity)/10 * size_factor2 + 'em';
+        element.lastElementChild.innerText = element.dataset.capacity;
+      }
   });
 }
 
