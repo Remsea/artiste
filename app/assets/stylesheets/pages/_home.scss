@@ -146,13 +146,13 @@ z-index:110;
     font-size:0.4rem;
   }
   .grid {
-grid: auto / auto;
-grid-gap: 20px;
-grid-template-areas:
-"capa"
-"building"
-;
-padding: 2px;
+    grid: auto / auto;
+    grid-gap: 20px;
+    grid-template-areas:
+    "capa"
+    "building"
+    ;
+    padding: 2px;
   }
   .tricontainer, .notricontainer {
     margin: 2px 0px;
@@ -161,6 +161,9 @@ padding: 2px;
 
   .tricontainer.capa, .notricontainer.capa {
     margin-top:20px;
+  }
+  .etiquette {
+    font-size: 2em;
   }
 
 }
