@@ -1,5 +1,5 @@
 import "bootstrap";
-import {checkCapacity, removeFormatContainer, updateCapacityContainer, resizeCapaBlock, rotate} from 'myjs.js';
+import {checkCapacity, removeFormatContainer, updateCapacityContainer, resizeCapaBlock, rotate} from './myjs.js';
 import { Draggable } from '@shopify/draggable';
 import { Droppable } from '@shopify/draggable';
 import { Sortable } from '@shopify/draggable';
