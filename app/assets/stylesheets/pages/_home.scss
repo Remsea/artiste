@@ -24,7 +24,7 @@
 .grid {
 display: grid;
 grid: auto auto / 1fr 1fr;
-background-color: none;
+grid-gap: 10px;
 grid-template-areas:
 "capa building"
 "capa building"
@@ -56,6 +56,8 @@ z-index:110;
 .interieur {
   z-index:110;
   transition: all .4s cubic-bezier(.5,.2,.43,1.33);
+  display: flex;
+  align-items: center;
   // -webkit-transition: -webkit-transform .8s ease-in-out;
   // -ms-transition: -ms-transform .8s ease-in-out;
   // transition: transform .8s ease-in-out;
@@ -67,7 +69,7 @@ z-index:110;
   background-color: white;
   // margin-left:5px;
   text-align: center;
-  padding: 6px;
+  padding: 0.3em;
   margin: 2px 5px;
   color: #92929b;
   box-shadow: 3px 3px 10px rgba(30,30,30,0.3);
@@ -99,7 +101,7 @@ z-index:110;
   display: flex;
   flex-direction: column;
   min-height: 50px;
-  width: 400px;
+  width: 30em;
   margin: auto;
   background-color: lightgrey;
   margin-top: 20px;
@@ -119,13 +121,38 @@ z-index:110;
   }
 }
 
-.draggable--over {
-// background-color: rgba(40,40,40,0.8);
+@media(max-width: 768px) {
+  body {
+    font-size:0.6rem;
+  }
 }
 
-.dropzone { outline: solid 1px; height: 50px; }
-.draggable-dropzone--occupied { background: lightblue; }
-
-.busy {
-  background-color: red;
+@media(max-width: 362px) {
+  body {
+    font-size:0.6rem;
+  }
+  .grid {
+grid: auto / auto;
+grid-gap: 5px;
+grid-template-areas:
+"capa"
+"building"
+;
+  }
+  .tricontainer, .notricontainer {
+    margin:0px;
+  }
 }
+
+
+
+// .draggable--over {
+// // background-color: rgba(40,40,40,0.8);
+// }
+
+// .dropzone { outline: solid 1px; height: 50px; }
+// .draggable-dropzone--occupied { background: lightblue; }
+
+// .busy {
+//   background-color: red;
+// }
