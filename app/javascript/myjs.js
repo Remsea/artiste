@@ -43,6 +43,7 @@ const updateCapacityContainer = (e) => {
 
 const resizeCapaBlock = (e) => {
   const size_factor = 3;
+  const size_factor2 = 3.2;
   e.preventDefault();
   document.querySelectorAll('.atrier').forEach((element) => {
     element.firstChild.style.width = parseInt(element.dataset.capacity) * size_factor + 'px';
@@ -51,7 +52,7 @@ const resizeCapaBlock = (e) => {
 
   document.querySelectorAll('.tricontainer').forEach((element) => {
     if (element.dataset.capacity)
-      {element.style.width = parseInt(element.dataset.capacity) * size_factor + 'px';}
+      {element.style.width = parseInt(element.dataset.capacity) * size_factor2 + 'px';}
   });
 }
 
