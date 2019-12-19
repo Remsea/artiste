@@ -16,23 +16,31 @@ import SwapAnimation from '@shopify/draggable/lib/plugins/swap-animation';
 // draggable.on('drag:move', () => console.log('drag:move'));
 // draggable.on('drag:stop', () => console.log('drag:stop'));
 let capacityReached;
+
+// initialisation des blocks quand on clique sur le btn start (width fct valeur)
 document.querySelector('.start').addEventListener('click', function(e){return resizeCapaBlock(e)})
 
 
-
+// initialisation de l'objet triable qui se trouve dans une div tricontainer et avec la class atrier
 const sortable = new Sortable(document.querySelectorAll('.tricontainer'), {
   draggable: '.atrier'
 });
 
+// Au debut du drag, on verifie les capa des containers
 sortable.on('sortable:start', function(e){return checkCapacity(e)});
 // sortable.on('sortable:sort', () => console.log('sortable:sort', sortable.containers));
+
 sortable.on('sortable:sorted', (e) => console.log('sorted'));
+
+// Au stop du drag, on enleve le format rouge des containers avec une capa <
+// et on met à jour les capacités des containers source et cible
 sortable.on('sortable:stop', (e) => {
   removeFormatContainer(e);
   updateCapacityContainer(e);
   }
 );
 
+// ne pas rendre possible le drop sur un notricontainer, c'est à dire un container avec une capa<
 sortable.on('sortable:sort', (evt) => {
     if (evt.dragEvent.overContainer.classList.contains('notricontainer')) {
       evt.cancel();
@@ -40,10 +48,22 @@ sortable.on('sortable:sort', (evt) => {
     }
   );
 
+// effet animé sur le mirror lors du premier deplacement
 sortable.on('mirror:attached', (evt) => {
-  setTimeout(function(){evt.data.mirror.firstChild.classList.add('rotation');}, 100)
-
+  setTimeout(function(){evt.data.mirror.firstChild.classList.add('rotation');}, 100);
     // evt.data.mirror.firstChild.style.setProperty('transform','rotate(35deg)');
+    }
+  );
+
+sortable.on('drag:over:container', (evt) => {
+  if (evt.overContainer.classList.contains('notricontainer'))
+    {evt.overContainer.classList.add('shake-bottom');
+    setTimeout(function(){evt.overContainer.classList.remove('shake-bottom');},1000);
+    }
+
+    // if (evt.dragEvent.overContainer.classList.contains('notricontainer')) {
+    //   evt.cancel();
+    //   }
     }
   );
 
