@@ -1,13 +1,10 @@
-
-const checkCapacity = (e) =>
-{ rotate(e);
+// verifie les capacites des tricontainers par rapport au composant draggé et ajoute la class notricontainer is insuffisante
+const checkCapacity = (e) => {
   let capa = e.data.dragEvent.data.source.dataset.capacity;
     if (document.querySelectorAll('.tricontainer.capa'))
     {
       const mescibles = document.querySelectorAll('.tricontainer.capa');
       mescibles.forEach((cible) => {
-        console.log(cible.dataset.capacity, capa);
-
         if (parseInt(cible.dataset.capacity) < parseInt(capa)) {
           if (cible !== e.data.startContainer){
                     cible.classList.remove('tricontainer');
@@ -18,18 +15,13 @@ const checkCapacity = (e) =>
     }
 }
 
-const rotate = (e) => {console.log(e);
-// e.data.dragEvent.data.source.style.opacity ='0.4';
-// e.data.dragEvent.data.originalSource.style.opacity ='0.1';
-};
-// e.data.dragEvent.data.source.classList.toggle('rotate')
+// enleve toutes les class notricontainer (appelé une fois le drag terminé)
 const removeFormatContainer = (e) => {
   if (document.querySelectorAll('.notricontainer')){
     document.querySelectorAll('.notricontainer').forEach(element => {
         element.className = element.className.replace(/notricontainer/ , 'tricontainer');
     });
   }
-  rotate(e);
 }
 
 const updateCapacityContainer = (e) => {
@@ -43,10 +35,59 @@ const updateCapacityContainer = (e) => {
   }
 }
 
+// fonction lancée a partir du btn start qui fait apparaitre les blocs et appelle le dimensionnement
+const start = (e) => {
+  e.preventDefault();
+  const mybuilding = document.querySelector(".building");
+  setTimeout(entranceClass,10);
+  setTimeout(() => {entranceBoucing(mybuilding);}, 600);
+  setTimeout(() => {resizeCapaBlock(e);}, 600);
+
+  setTimeout(removeEntranceClass, 2000);
+  setTimeout(() => {removeClassBounce(mybuilding);}, 600 + 1200 * mybuilding.children.length);
+}
+
+// effet sur la grid qui apparait
+const entranceClass = () => {
+  document.querySelector('.grid').classList.add('swing-in-top-fwd');
+}
+
+// supprime la class de l'effet sur grid et remet l'opacité à 1
+const removeEntranceClass = () => {
+  const mygrid = document.querySelector('.grid');
+  mygrid.style.opacity = '1';
+  mygrid.classList.remove('swing-in-top-fwd');
+}
+
+// apparition des etages en bouncing
+const entranceBoucing = (mybuilding) => {
+  let i;
+  let j = mybuilding.children.length;
+  for (i = 0 ; i < mybuilding.children.length; i++)
+  {
+    addClassBounce(mybuilding.children[i],j);
+    j--;
+  }
+}
+
+// ajout de la class bounce avec un delay sur chaque etage
+const addClassBounce = (element,i) => {
+  setTimeout(()=> {
+                element.classList.add('bounce-in-top');
+                element.style.opacity = '1';
+                  }, 500 * i);
+}
+
+const removeClassBounce = (mybuilding) => {
+  let i;
+  for (i = 0 ; i < mybuilding.children.length; i++)
+    {mybuilding.children[i].classList.remove('bounce-in-top');}
+}
+
+// dimensionnement des block
 const resizeCapaBlock = (e) => {
   const size_factor = 2;
   const size_factor2 = 2.2;
-  e.preventDefault();
   document.querySelectorAll('.atrier').forEach((element) => {
     element.firstChild.style.width = parseInt(element.dataset.capacity)/10 * size_factor + 'em';
     element.lastElementChild.innerText = element.dataset.capacity;
@@ -59,7 +100,8 @@ const resizeCapaBlock = (e) => {
         element.lastElementChild.innerText = element.dataset.capacity;
       }
   });
+
 }
 
 
-export {checkCapacity, removeFormatContainer, updateCapacityContainer, resizeCapaBlock, rotate};
+export {checkCapacity, removeFormatContainer, updateCapacityContainer, resizeCapaBlock, start};

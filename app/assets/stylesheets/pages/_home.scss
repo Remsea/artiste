@@ -1,3 +1,5 @@
+@import 'effects';
+
 // Specific CSS for your home-page
 .box {
   height: 400px;
@@ -29,20 +31,24 @@
   background-color: lightgrey;
 }
 
-.capa {
-  grid-area:capa;
+.team {
+  grid-area:team;
 }
 .building {
-  grid-area:building;
+  grid-area: building;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .grid {
+opacity:0;
 display: grid;
-grid: auto auto / 1fr 1fr;
+grid: auto / auto;
 grid-gap: 20px;
 grid-template-areas:
-"capa building"
-"capa building"
+"team building"
 ;
 min-width: 50vw;
 min-height: 30vh;
@@ -52,7 +58,7 @@ padding: 15px;
 
 .empty {
   // background-image: repeating-linear-gradient(-45deg, transparent, transparent 9px, black 10px, black 10px);
-  background-color:#b5b5b5;
+  background-color:#a2a2a26e;
   flex-grow:1;
   height: 40px;
   padding-top:6px;
@@ -62,7 +68,7 @@ padding: 15px;
 
 .atrier {
 width:fit-content;
-z-index:110;
+z-index:111;
 }
 
 
@@ -107,6 +113,7 @@ z-index:110;
 .atrier.draggable-mirror {
     // background-color: yellow;
     // transform: rotate(15deg);
+    z-index:120;
   }
 
 .tricontainer, .notricontainer {
@@ -123,15 +130,19 @@ z-index:110;
     &.capa {
     flex-direction: row;
     align-items: center;
+    opacity:0;
+    background-color:#8bf3f4;
      }
 
 }
 .notricontainer {
-  background-color: #ca3b3b;
   transform:scale(1.04);
   z-index:0;
   .empty {
    background-color:#403d3d;
+  }
+  &.capa {
+    background-color: #ca3b3b;
   }
 }
 
@@ -149,7 +160,7 @@ z-index:110;
     grid: auto / auto;
     grid-gap: 20px;
     grid-template-areas:
-    "capa"
+    "team"
     "building"
     ;
     padding: 2px;
@@ -168,77 +179,7 @@ z-index:110;
 
 }
 
-.shake-bottom {
-  -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-          animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
 
-@-webkit-keyframes shake-bottom {
-  0%,
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
-  }
-  10% {
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: rotate(-4deg);
-            transform: rotate(-4deg);
-  }
-  30%,
-  50%,
-  70% {
-    -webkit-transform: rotate(4deg);
-            transform: rotate(4deg);
-  }
-  80% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  90% {
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
-  }
-}
-@keyframes shake-bottom {
-  0%,
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
-  }
-  10% {
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: rotate(-4deg);
-            transform: rotate(-4deg);
-  }
-  30%,
-  50%,
-  70% {
-    -webkit-transform: rotate(4deg);
-            transform: rotate(4deg);
-  }
-  80% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  90% {
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
-  }
-}
 
 
 
