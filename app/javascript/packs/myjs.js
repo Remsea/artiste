@@ -1,25 +1,25 @@
-// verifie les capacites des tricontainers par rapport au composant draggé et ajoute la class notricontainer is insuffisante
+// verifie les capacites des dropcontainers par rapport au composant draggé et ajoute la class notricontainer is insuffisante
 const checkCapacity = (e) => {
   let capa = e.data.dragEvent.data.source.dataset.capacity;
-    if (document.querySelectorAll('.tricontainer.capa'))
+    if (document.querySelectorAll('.dropcontainer.capa'))
     {
-      const mescibles = document.querySelectorAll('.tricontainer.capa');
+      const mescibles = document.querySelectorAll('.dropcontainer.capa');
       mescibles.forEach((cible) => {
         if (parseInt(cible.dataset.capacity) < parseInt(capa)) {
           if (cible !== e.data.startContainer){
-                    cible.classList.remove('tricontainer');
-                    cible.classList.add('notricontainer');
+                    cible.classList.remove('dropcontainer');
+                    cible.classList.add('nodropcontainer');
           }
         }
       });
     }
 }
 
-// enleve toutes les class notricontainer (appelé une fois le drag terminé)
+// enleve toutes les class nodropcontainer (appelé une fois le drag terminé)
 const removeFormatContainer = (e) => {
-  if (document.querySelectorAll('.notricontainer')){
-    document.querySelectorAll('.notricontainer').forEach(element => {
-        element.className = element.className.replace(/notricontainer/ , 'tricontainer');
+  if (document.querySelectorAll('.nodropcontainer')){
+    document.querySelectorAll('.nodropcontainer').forEach(element => {
+        element.className = element.className.replace(/nodropcontainer/ , 'dropcontainer');
     });
   }
 }
@@ -27,18 +27,18 @@ const removeFormatContainer = (e) => {
 const updateCapacityContainer = (e) => {
   if(e.data.newContainer.dataset.capacity){
       e.data.newContainer.dataset.capacity = parseInt(e.data.newContainer.dataset.capacity) - parseInt(e.data.dragEvent.data.source.dataset.capacity);
-      e.data.newContainer.querySelector('.etiquette').innerText = e.data.newContainer.dataset.capacity;
+      e.data.newContainer.querySelector('.etiquette-info').firstChild.innerText = e.data.newContainer.dataset.capacity;
     }
   if (e.data.oldContainer.dataset.capacity){
     e.data.oldContainer.dataset.capacity = parseInt(e.data.oldContainer.dataset.capacity) + parseInt(e.data.dragEvent.data.source.dataset.capacity);
-    e.data.oldContainer.querySelector('.etiquette').innerText = e.data.oldContainer.dataset.capacity;
+    e.data.oldContainer.querySelector('.etiquette-info').firstChild.innerText = e.data.oldContainer.dataset.capacity;
   }
 }
 
 // fonction lancée a partir du btn start qui fait apparaitre les blocs et appelle le dimensionnement
 const start = (e) => {
   e.preventDefault();
-  const mybuilding = document.querySelector(".building");
+  const mybuilding = document.querySelector(".inside-building");
   setTimeout(entranceClass,10);
   setTimeout(() => {entranceBoucing(mybuilding);}, 600);
   setTimeout(() => {resizeCapaBlock(e);}, 600);
@@ -88,12 +88,12 @@ const removeClassBounce = (mybuilding) => {
 const resizeCapaBlock = (e) => {
   const size_factor = 2;
   const size_factor2 = 2.2;
-  document.querySelectorAll('.atrier').forEach((element) => {
+  document.querySelectorAll('.atrierservice').forEach((element) => {
     element.firstChild.style.width = parseInt(element.dataset.capacity)/10 * size_factor + 'em';
     element.lastElementChild.innerText = element.dataset.capacity;
   });
 
-  document.querySelectorAll('.tricontainer').forEach((element) => {
+  document.querySelectorAll('.dropcontainer').forEach((element) => {
     if (element.dataset.capacity)
       {
         element.style.width = parseInt(element.dataset.capacity)/10 * size_factor2 + 'em';

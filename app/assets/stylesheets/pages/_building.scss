@@ -1,0 +1,372 @@
+$grisclair: #aaa9a9;
+$background1: #FAFBFC;
+$vert:#AFD9A7;
+$vertdark:#59B34B;
+$rose:#F3A0BB;
+$rosedark:#E23B76;
+$bleu:#9395BA;
+$bleudark:#282B74;
+$orange:#FFACA4;
+$orangedark:#FF5445;
+$jaune:#F6DEA1;
+$jaunedark:#EDBC34;
+
+$sky:#E7F3FA;
+$buildingcolor: #E6E6E6;
+$buildinginside: #F2F2F2;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-custom {
+  max-width: 90vw;
+  margin: auto;
+}
+
+.row {
+  padding-top: 50px;
+}
+
+.vert {
+  background-color: $vert;
+}
+.vertdark {
+  background-color: $vertdark;
+}
+.rose {
+  background-color: $rose;
+}
+.rosedark {
+  background-color: $rosedark;
+}
+.bleu {
+  background-color: $bleu;
+}
+.bleudark {
+  background-color: $bleudark;
+}
+.orange {
+  background-color: $orange;
+}
+.orangedark {
+  background-color: $orangedark;
+}
+.jaune {
+  background-color: $jaune;
+}
+.jaunedark {
+  background-color: $jaunedark;
+}
+
+
+.text-vert {
+  color: $vert;
+}
+.text-vertdark {
+  color: $vertdark;
+}
+.text-rose {
+  color: $rose;
+}
+.text-rosedark {
+  color: $rosedark;
+}
+.text-bleu {
+  color: $bleu;
+}
+.text-bleudark {
+  color: $bleudark;
+}
+.text-orange {
+  color: $orange;
+}
+.text-orangedark {
+  color: $orangedark;
+}
+.text-jaune {
+  color: $jaune;
+}
+.text-jaunedark {
+  color: $jaunedark;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.shadowbot {
+  box-shadow: 0px 3px 3px 1px rgba(237, 237, 237, 0.25);
+}
+
+.mainsideleft {
+  background-color: $background1;
+  border-radius: 5px;
+  // min-height: 100vh;
+  overflow: scroll;
+  padding: 10px 10px;
+}
+
+.mainsideright {
+  background-color: $background1;
+  border-radius: 5px;
+  min-height: 70vh;
+  overflow: hidden;
+  padding: 20px;
+
+}
+
+
+.smallbanner {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 5px 0px;
+
+  &.size1{
+    font-size:1em;
+  }
+
+  &.size2 {
+    font-size:0.8em;
+  }
+
+  .grow1 {
+    flex-grow:1;
+    padding-left:15px;
+  }
+  .grow2 {
+    flex-grow:1;
+    padding-left:8px;
+  }
+
+  p {
+    padding: 0 4px;
+  }
+
+  strong {
+    font-weight:900;
+    font-size:1.1em;
+  }
+  .light {
+    font-size: 0.7em;
+    color:$grisclair;
+  }
+  span {
+    font-weight:900;
+    font-size:1em;
+  }
+}
+
+.cardmetier {
+  background-color:white;
+  border-radius:5px;
+  box-shadow: 3px 3px 10px rgba(215, 213, 213, 0.3);
+  min-height:120px;
+  padding: 5px 0px 20px 0px;
+  margin-bottom:5px;
+}
+
+.atrierservice {
+  z-index:200;
+  // width:fit-content;
+}
+
+.block-service {
+  transform: rotate(0deg);
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  padding: 5px;
+  font-size:0.7em;
+  font-weight:bold;
+  margin:3px 15px;
+  min-height:48px;
+  color:white;
+  z-index:200;
+
+  &:hover {
+    cursor: grab;
+    transform:scale(1.06);
+  }
+  &.rotation {
+    transform:rotate(7deg);
+  }
+
+  .firstline {
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    .pop-personne {
+      font-weight: 300;
+      font-size:0.9em;
+      text-align:right;
+    }
+  }
+
+  .sideright {
+    display:flex;
+    justify-content: flex-end;
+
+    .pop-surface {
+      border-radius: 4px;
+      padding:2px;
+    }
+
+  }
+}
+
+.title-line {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:1.2em;
+  font-weight:900;
+  margin-bottom: 30px;
+
+  strong {
+    font-size:1.5em;
+  }
+}
+
+.full-building {
+  // min-height:80vh;
+  // min-height: inherit;
+  background-color:$sky;
+  padding: 30px 0px 3% 0px;
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.spacearound {
+
+  width:70%;
+  position:relative;
+
+}
+
+// Macro-Tool-GDL_images-buissons.png
+.head-building {
+position:relative;
+min-height:95px;
+}
+
+
+.body-building {
+  background-color: $buildingcolor;
+  min-height: 60vh;
+}
+
+.inside-building {
+  background-color: $buildinginside;
+  width:90%;
+  margin: auto;
+  min-height: inherit;
+  padding-top:40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .dropcontainer, .nodropcontainer {
+  position:relative;
+  transition: transform .4s cubic-bezier(.5,.2,.43,1.33);
+  display: flex;
+  flex-direction: column;
+  min-height: 50px;
+  width: 20em;
+  margin: 5px 0px;
+  background-color: lightgrey;
+  margin-top: 20px;
+  padding: 5px 5px;
+    &.capa {
+    flex-direction: row;
+    align-items: center;
+    opacity:1;
+    background-color:#E2EAF3;
+     }
+     .etiquette-info {
+      position:absolute;
+      right:-200px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-size:0.8em;
+      font-weight: bold;
+      p {
+        color: #3EA9F5;
+        margin: 0 8px;
+      }
+     }
+}
+
+.pop-pourcentage {
+  border-radius: 50%;
+  height:50px;
+  width: 50px;
+  background-color:#585C5D ;
+  color: white;
+  border: 2px solid white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin: 0 8px;
+}
+
+.pop-surface-utilise {
+  border-radius: 5%;
+  padding: 8px;
+  background-color:#F8FCFD ;
+  color: #666666;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+
+
+.nodropcontainer {
+  transform:scale(1.04);
+  z-index:0;
+  .empty {
+   background-color:#403d3d;
+  }
+  &.capa {
+    background-color: #ca3b3b;
+  }
+}
+
+}
+
+
+  .image-toit {
+    // position:absolute;
+    // top: 7%;
+    background-image: asset_url('Macro-Tool-GDL_images_bat-haut.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 77%;
+    height: 150px;
+    background-position-x: center;
+    background-position-y: bottom;
+    margin-bottom: -5px;
+    z-index: 20;
+  }
+
+  .image-buisson {
+  position:absolute;
+  bottom: 0%;
+  background-image: asset_url('Macro-Tool-GDL_images-buissons.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 10%;
+  max-height: 100px;
+  background-position-x: center;
+  }
+
+

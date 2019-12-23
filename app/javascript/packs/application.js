@@ -7,13 +7,16 @@ import { Plugins } from '@shopify/draggable';
 import SwapAnimation from '@shopify/draggable/lib/plugins/swap-animation';
 
 let capacityReached;
+console.log('debut drop');
 
 // initialisation des blocks quand on clique sur le btn start (width fct valeur)
-document.querySelector('.start').addEventListener('click', function(e){return start(e)})
+if (document.querySelector('.start')) {
+document.querySelector('.start').addEventListener('click', function(e){return start(e)});
+}
 
-// initialisation de l'objet triable qui se trouve dans une div tricontainer et avec la class atrier
-const sortable = new Sortable(document.querySelectorAll('.tricontainer'), {
-  draggable: '.atrier'
+// initialisation de l'objet triable qui se trouve dans une div dropcontainer et avec la class atrier
+const sortable = new Sortable(document.querySelectorAll('.dropcontainer'), {
+  draggable: '.atrierservice'
 });
 
 // Au debut du drag, on verifie les capa des containers
@@ -27,9 +30,9 @@ sortable.on('sortable:stop', (e) => {
   }
 );
 
-// ne pas rendre possible le drop sur un notricontainer, c'est à dire un container avec une capa<
+// ne pas rendre possible le drop sur un nodropcontainer, c'est à dire un container avec une capa<
 sortable.on('sortable:sort', (evt) => {
-    if (evt.dragEvent.overContainer.classList.contains('notricontainer'))
+    if (evt.dragEvent.overContainer.classList.contains('nodropcontainer'))
       {
         evt.cancel();
       }
@@ -38,13 +41,14 @@ sortable.on('sortable:sort', (evt) => {
 
 // effet animé sur le mirror lors du premier deplacement
 sortable.on('mirror:attached', (evt) => {
-  setTimeout(function(){evt.data.mirror.firstChild.classList.add('rotation');}, 100);
+  console.log(evt.data.mirror.firstChild);
+  setTimeout(function(){evt.data.mirror.firstElementChild.classList.add('rotation');}, 100);
     }
   );
 
-// effet animé sur le container si capa insuffisante (notricontainer class)
+// effet animé sur le container si capa insuffisante (nodropcontainer class)
 sortable.on('drag:over:container', (evt) => {
-    if (evt.overContainer.classList.contains('notricontainer'))
+    if (evt.overContainer.classList.contains('nodropcontainer'))
       {
         evt.overContainer.classList.add('shake-bottom');
         setTimeout(function(){evt.overContainer.classList.remove('shake-bottom');},1000);
