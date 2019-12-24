@@ -109,7 +109,7 @@ const removeClassBounce = (mybuilding) => {
 // dimensionnement des blocks
 const resizeCapaBlock = (e) => {
   const size_factor = 0.45;
-  const size_factor2 = 0.40;
+  const size_factor2 = 0.42;
   let i = 1;
   document.querySelectorAll('.atrierservice').forEach((element) => {
     element.firstElementChild.style.width = parseInt(element.dataset.capacity)/10 * size_factor + 'em';

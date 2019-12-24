@@ -186,7 +186,7 @@ p {
   padding: 5px;
   font-size:0.7em;
   font-weight:bold;
-  margin:3px 15px;
+  margin:3px 0.5em 3px 1.7em;
   min-height:48px;
   color:white;
   z-index:200;
@@ -286,9 +286,8 @@ min-height:95px;
   flex-direction: column;
   min-height: 50px;
   width: 20em;
-  margin: 5px 0px;
+  margin: 2px 0px 2em 0px;
   background-color: lightgrey;
-  margin-top: 20px;
   padding: 5px 5px;
     &.capa {
     flex-direction: row;
