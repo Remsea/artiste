@@ -299,7 +299,7 @@ min-height:95px;
      .etiquette-info {
       position: absolute;
       transition: all .6s ease;
-      width: 14em; // used in js to know the em conversion in px
+      width: 15.7em; // used in js to know the em conversion in px
       right: -500px;
       display:flex;
       align-items:center;
@@ -323,7 +323,7 @@ min-height:95px;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin: 0 1em;
+  margin: 0 0.6em;
 }
 
 .pop-surface-utilise {
