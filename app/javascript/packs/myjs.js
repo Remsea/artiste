@@ -108,8 +108,8 @@ const removeClassBounce = (mybuilding) => {
 
 // dimensionnement des blocks
 const resizeCapaBlock = (e) => {
-  const size_factor = 0.45;
-  const size_factor2 = 0.42;
+  const size_factor = 0.47;
+  const size_factor2 = 0.43;
   let i = 1;
   document.querySelectorAll('.atrierservice').forEach((element) => {
     element.firstElementChild.style.width = parseInt(element.dataset.capacity)/10 * size_factor + 'em';
@@ -132,9 +132,10 @@ const resizeCapaBlock = (e) => {
 
 const updateValuesEtage = (element) => {
   let etiquetteInfo = element.querySelector('.etiquette-info');
-  let surfaceUtilise = element.dataset.capacity;
+  let surfaceUtilise = parseInt(element.dataset.originalcapacity) - parseInt(element.dataset.capacity);
   let surfaceOriginal = element.dataset.originalcapacity;
-
+  if (surfaceUtilise == surfaceOriginal) {element.querySelector('.empty').style.opacity = 0;}
+  else {element.querySelector('.empty').style.opacity = 1;}
   Array.from(etiquetteInfo.children).forEach((etiquetteChild) => {
                         etiquetteChild.classList.contains('pop-pourcentage') ? (etiquetteChild.innerText = (Math.round(parseInt(surfaceUtilise) / parseInt(surfaceOriginal) * 100)) + '%' ) : '';
                         etiquetteChild.classList.contains('pop-surface-utilise') ? (etiquetteChild.innerText = surfaceUtilise) : '';
