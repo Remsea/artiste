@@ -88,7 +88,7 @@ const addClassBounce = (element, j) => {
 //divided by 15 because the element has a css width set to 15em -> update if changes
 const showUpEtiquetteInfo = (element, i) => {
    setTimeout(()=> {
-    let emvalue = parseInt(element.querySelector('.etiquette-info').offsetWidth) / 15 ;
+    let emvalue = parseInt(element.querySelector('.etiquette-info').offsetWidth) / 14 ;
     // let offsetvalue = 4 + ((parseInt(element.parentNode.offsetWidth) / parseInt(emvalue)) - (parseInt(element.offsetWidth)/ parseInt(emvalue))) / 2 ;
     let offsetvalue = 10 * emvalue + ((parseInt(element.parentNode.offsetWidth) ) - (parseInt(element.offsetWidth))) / 2 ;
    console.log("parent width",element.parentNode.offsetWidth / parseInt(emvalue), 'element width', element.offsetWidth / parseInt(emvalue), 'emvalue', emvalue, 'offsetvalue', offsetvalue );
