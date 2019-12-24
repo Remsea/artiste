@@ -26,6 +26,7 @@ body {
 
 .row {
   padding-top: 50px;
+  opacity:0;
 }
 
 .vert {
@@ -111,9 +112,11 @@ p {
 .mainsideright {
   background-color: $background1;
   border-radius: 5px;
-  min-height: 70vh;
+  min-height: 60vh;
   overflow: hidden;
   padding: 20px;
+  position: sticky;
+  top:30px;
 
 }
 
@@ -175,6 +178,7 @@ p {
 }
 
 .block-service {
+  transition: all .6s cubic-bezier(.5,.2,.43,1.33);
   transform: rotate(0deg);
   border-radius:8px;
   display:flex;
@@ -186,6 +190,7 @@ p {
   min-height:48px;
   color:white;
   z-index:200;
+  width:1px;
 
   &:hover {
     cursor: grab;
@@ -214,6 +219,8 @@ p {
     .pop-surface {
       border-radius: 4px;
       padding:2px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
   }
@@ -259,7 +266,7 @@ min-height:95px;
 
 .body-building {
   background-color: $buildingcolor;
-  min-height: 60vh;
+  min-height: 50vh;
 }
 
 .inside-building {
@@ -286,12 +293,14 @@ min-height:95px;
     &.capa {
     flex-direction: row;
     align-items: center;
-    opacity:1;
+    opacity:0;
     background-color:#E2EAF3;
      }
      .etiquette-info {
-      position:absolute;
-      right:-200px;
+      position: absolute;
+      transition: all .6s ease;
+      width: 14em; // used in js to know the em conversion in px
+      right: -500px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -299,27 +308,27 @@ min-height:95px;
       font-weight: bold;
       p {
         color: #3EA9F5;
-        margin: 0 8px;
+        margin: 0 0.8em;
       }
      }
 }
 
 .pop-pourcentage {
   border-radius: 50%;
-  height:50px;
-  width: 50px;
+  height:4em;
+  width: 4em;
   background-color:#585C5D ;
   color: white;
   border: 2px solid white;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin: 0 8px;
+  margin: 0 1em;
 }
 
 .pop-surface-utilise {
   border-radius: 5%;
-  padding: 8px;
+  padding: 0.8em;
   background-color:#F8FCFD ;
   color: #666666;
   display:flex;
@@ -330,7 +339,7 @@ min-height:95px;
 
 
 .nodropcontainer {
-  transform:scale(1.04);
+  // transform:scale(1.04);
   z-index:0;
   .empty {
    background-color:#403d3d;

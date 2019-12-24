@@ -146,6 +146,13 @@ z-index:111;
   }
 }
 
+
+@media(max-width: 1400px) {
+  body {
+    font-size:0.8rem;
+  }
+}
+
 @media(max-width: 768px) {
   body {
     font-size:0.6rem;
@@ -176,6 +183,22 @@ z-index:111;
   .etiquette {
     font-size: 2em;
   }
+
+  .dropcontainer.capa .etiquette-info {
+      width: 10em;
+      display:flex;
+      flex-direction:column;
+    }
+
+
+  .pop-pourcentage, .pop-surface-utilise {
+    margin-bottom:0.8em;
+  }
+
+  .mainsideright {
+    padding: 0;
+  }
+
 
 }
 

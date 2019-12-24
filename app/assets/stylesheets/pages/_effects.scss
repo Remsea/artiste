@@ -36,6 +36,7 @@
             transform: rotate(2deg);
   }
 }
+
 @keyframes shake-bottom {
   0%,
   100% {
@@ -71,8 +72,8 @@
 }
 
 .swing-in-top-fwd {
-  -webkit-animation: swing-in-top-fwd 1.2s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.2s both;
-          animation: swing-in-top-fwd 1.2s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.2s both;
+  -webkit-animation: swing-in-top-fwd 1.4s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.2s both;
+          animation: swing-in-top-fwd 1.4s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.2s both;
 }
 
 
