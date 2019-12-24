@@ -88,14 +88,13 @@ const addClassBounce = (element, j) => {
 //divided by 15 because the element has a css width set to 15em -> update if changes
 const showUpEtiquetteInfo = (element, i) => {
    setTimeout(()=> {
-    console.log('parent width', element.parentNode.offsetWidth);
-    console.log('element width',element.offsetWidth);
-    console.log('size em of etiquette',window.getComputedStyle(document.querySelector('.etiquette-info')).width);
     let emvalue = parseInt(element.querySelector('.etiquette-info').offsetWidth) / 13 ;
-    console.log(emvalue);
-    console.log(((parseInt(element.offsetWidth) / 2) - parseInt(element.parentNode.offsetWidth)) / parseInt(emvalue) +'em');
-    element.querySelector('.etiquette-info').style.right = (((parseInt(element.offsetWidth) / 2) - parseInt(element.parentNode.offsetWidth) * 0.8)) / parseInt(emvalue) +'em';
-    console.log('right',element.querySelector('.etiquette-info').style.right);
+    // let offsetvalue = 4 + ((parseInt(element.parentNode.offsetWidth) / parseInt(emvalue)) - (parseInt(element.offsetWidth)/ parseInt(emvalue))) / 2 ;
+    let offsetvalue = 10 * emvalue + ((parseInt(element.parentNode.offsetWidth) ) - (parseInt(element.offsetWidth))) / 2 ;
+   console.log("parent width",element.parentNode.offsetWidth / parseInt(emvalue), 'element width', element.offsetWidth / parseInt(emvalue), 'emvalue', emvalue, 'offsetvalue', offsetvalue );
+    const mediaquery = window.matchMedia("(max-width: 360px)");
+    if (mediaquery.matches) {offsetvalue -= 10;}
+    element.querySelector('.etiquette-info').style.right = -offsetvalue +'px';
    }, 800 * i);
 
 }
@@ -109,8 +108,8 @@ const removeClassBounce = (mybuilding) => {
 
 // dimensionnement des blocks
 const resizeCapaBlock = (e) => {
-  const size_factor = 0.5;
-  const size_factor2 = 0.45;
+  const size_factor = 0.45;
+  const size_factor2 = 0.40;
   let i = 1;
   document.querySelectorAll('.atrierservice').forEach((element) => {
     element.firstElementChild.style.width = parseInt(element.dataset.capacity)/10 * size_factor + 'em';

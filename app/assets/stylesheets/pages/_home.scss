@@ -153,10 +153,19 @@ z-index:111;
   }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1200px) {
   body {
     font-size:0.6rem;
   }
+
+}
+
+@media(max-width: 900px) {
+.dropcontainer.capa .etiquette-info {
+      width: 10em;
+      display:flex;
+      flex-direction:column;
+    }
 }
 
 @media(max-width: 362px) {
