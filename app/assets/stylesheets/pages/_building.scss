@@ -278,6 +278,7 @@ p {
 .body-building {
     background-color: $buildingcolor;
     min-height: 50vh;
+    box-shadow: inset 0px 12px 1px 0px rgba(193, 190, 190, 0.6);
 }
 
 .inside-building {
@@ -289,6 +290,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: inset 0px 12px 1px 0px rgba(193, 190, 190, 0.6);
     .parentcontainer {
         transition: opacity .2s .1s ease-in;
         min-width: 100%;
@@ -394,7 +396,7 @@ p {
 .image-toit {
     // position:absolute;
     // top: 7%;
-    background-image: asset_url('Macro-Tool-GDL_images_bat-haut.png');
+    background-image: asset_url('Macro-Tool-GDL_images_bat-haut3.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 77%;
