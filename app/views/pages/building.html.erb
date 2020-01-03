@@ -1,4 +1,4 @@
-<p class='mt-6'><a href="#" class='start btn btn-outline-primary radius5'>Start</a><a href="./building" class='restart btn btn-outline-primary radius5 ml-3'>Reset</a></p>
+<p class='mt-6'><a href="#" class='start btn btn-outline-primary radius5 mt-3'>Start</a><a href="./building" class='restart btn btn-outline-primary radius5 ml-3 mt-3'>Reset</a></p>
   <div class="row">
     <div class="col-s-12 col-md-4 px-3" style=''>
       <div class="mainsideleft">
@@ -8,7 +8,7 @@
           <p><span>2110 m2</span></p>
         </div>
 
-        <div class="cardmetier dropcontainer">
+        <div class="cardmetier dropcontainer" data-group="1">
 
           <div class="smallbanner size2 shadowbot">
             <p class='grow2'><strong>MARKETING</strong></p>
@@ -16,7 +16,7 @@
             <p><span class='text-rosedark'>800 m2</span></p>
           </div>
 
-          <div class="atrierservice" data-capacity='250'>
+          <div class="atrierservice" data-capacity='250' data-group="1">
             <div class="block-service rose">
               <div class='firstline'>
                 <p class='text-rosedark'>Mar. produit.</p>
@@ -30,7 +30,7 @@
             </div>
           </div>
 
-          <div class="atrierservice" data-capacity='400'>
+          <div class="atrierservice" data-capacity='400' data-group="1">
             <div class="block-service rose">
               <div class='firstline'>
                 <p class='text-rosedark'>Mar. Marché.</p>
@@ -44,7 +44,7 @@
             </div>
           </div>
 
-          <div class="atrierservice" data-capacity='150'>
+          <div class="atrierservice" data-capacity='150' data-group="1">
             <div class="block-service rose">
               <div class='firstline'>
                 <p class='text-rosedark'>Mar. Di.</p>
@@ -60,7 +60,7 @@
 
         </div>
 
-        <div class="cardmetier dropcontainer">
+        <div class="cardmetier dropcontainer" data-group="2">
 
           <div class="smallbanner size2 shadowbot">
             <p class='grow2'><strong>COMMUNICATION</strong></p>
@@ -68,7 +68,7 @@
             <p><span class='text-vertdark'>360 m2</span></p>
           </div>
 
-          <div class="atrierservice" data-capacity='180'>
+          <div class="atrierservice" data-capacity='180' data-group="2">
             <div class="block-service vert">
                <div class='firstline'>
                 <p class='text-vertdark'>Com. Int.</p>
@@ -83,7 +83,7 @@
           </div>
 
 
-          <div class="atrierservice" data-capacity='180'>
+          <div class="atrierservice" data-capacity='180' data-group="2">
             <div class="block-service vert">
               <div class='firstline'>
                 <p class='text-vertdark'>Com. Ext.</p>
@@ -100,7 +100,7 @@
 
 
 
-        <div class="cardmetier dropcontainer">
+        <div class="cardmetier dropcontainer" data-group="3">
 
           <div class="smallbanner size2 shadowbot">
             <p class='grow2'><strong>RH</strong></p>
@@ -108,7 +108,7 @@
             <p><span class='text-bleudark'>350 m2</span></p>
           </div>
 
-          <div class="atrierservice" data-capacity='100'>
+          <div class="atrierservice" data-capacity='100' data-group="3">
             <div class="block-service bleu">
 
               <div class='firstline'>
@@ -124,7 +124,7 @@
 
           </div>
 
-          <div class="atrierservice" data-capacity='250'>
+          <div class="atrierservice" data-capacity='250' data-group="3">
             <div class="block-service bleu">
               <div class='firstline'>
                 <p class='text-bleudark'>RH2.</p>
@@ -141,7 +141,7 @@
         </div>
 
 
-        <div class="cardmetier dropcontainer">
+        <div class="cardmetier dropcontainer" data-group="4">
 
           <div class="smallbanner size2 shadowbot">
             <p class='grow2'><strong>FINANCE</strong></p>
@@ -149,7 +149,7 @@
             <p><span class='text-orangedark'>180 m2</span></p>
           </div>
 
-          <div class="atrierservice" data-capacity='180'>
+          <div class="atrierservice" data-capacity='180' data-group="4">
             <div class="block-service orange">
 
               <div class='firstline'>
@@ -167,7 +167,7 @@
 
         </div>
 
-         <div class="cardmetier dropcontainer">
+         <div class="cardmetier dropcontainer" data-group="5">
 
           <div class="smallbanner size2 shadowbot">
             <p class='grow2'><strong>IT</strong></p>
@@ -175,7 +175,7 @@
             <p><span class='text-jaunedark'>420 m2</span></p>
           </div>
 
-          <div class="atrierservice" data-capacity='250'>
+          <div class="atrierservice" data-capacity='250' data-group="5">
             <div class="block-service jaune">
 
               <div class='firstline'>
@@ -191,7 +191,7 @@
 
           </div>
 
-          <div class="atrierservice" data-capacity='170'>
+          <div class="atrierservice" data-capacity='170' data-group="5">
             <div class="block-service jaune">
               <div class='firstline'>
                 <p class='text-jaunedark'>IT - B</p>
@@ -223,43 +223,46 @@
         <div class="spacearound">
           <div class="body-building">
             <div class="inside-building">
-
+              <div class="parentcontainer">
                 <div class="dropcontainer capa radius5" data-capacity='712' data-originalcapacity='712'>
                   <div class="empty"></div>
-                  <div class="etiquette-info">
-                    <div class="pop-pourcentage">86%</div>
-                    <div class="pop-surface-utilise">610m2</div>
-                    <p class="surface-total">/ 712 m2</p>
-                  </div>
                 </div>
-
+                <div class="etiquette-info">
+                  <div class="pop-pourcentage">86%</div>
+                  <div class="pop-surface-utilise">610m2</div>
+                  <p class="surface-total">/ 712 m2</p>
+                </div>
+              </div>
+              <div class="parentcontainer">
                 <div class="dropcontainer capa radius5" data-capacity='500' data-originalcapacity='500'>
                   <div class="empty"></div>
-                  <div class="etiquette-info">
-                    <div class="pop-pourcentage">86%</div>
-                    <div class="pop-surface-utilise">610m2</div>
-                    <p class="surface-total">/ 712 m2</p>
-                  </div>
                 </div>
-
+                <div class="etiquette-info">
+                  <div class="pop-pourcentage">86%</div>
+                  <div class="pop-surface-utilise">610m2</div>
+                  <p class="surface-total">/ 712 m2</p>
+                </div>
+              </div>
+              <div class="parentcontainer">
                 <div class="dropcontainer capa radius5" data-capacity='712' data-originalcapacity='712'>
                   <div class="empty"></div>
-                  <div class="etiquette-info">
-                    <div class="pop-pourcentage">86%</div>
-                    <div class="pop-surface-utilise">610m2</div>
-                    <p class="surface-total">/ 712 m2</p>
-                  </div>
                 </div>
-
+                <div class="etiquette-info">
+                  <div class="pop-pourcentage">86%</div>
+                  <div class="pop-surface-utilise">610m2</div>
+                  <p class="surface-total">/ 712 m2</p>
+                </div>
+              </div>
+              <div class="parentcontainer">
                 <div class="dropcontainer capa radius5" data-capacity='726' data-originalcapacity='726'>
                   <div class="empty"></div>
-                  <div class="etiquette-info">
-                    <div class="pop-pourcentage">86%</div>
-                    <div class="pop-surface-utilise">610m2</div>
-                    <p class="surface-total">/ 712 m2</p>
-                  </div>
                 </div>
-
+                <div class="etiquette-info">
+                  <div class="pop-pourcentage">86%</div>
+                  <div class="pop-surface-utilise">610m2</div>
+                  <p class="surface-total">/ 712 m2</p>
+                </div>
+              </div>
             </div>
 
           </div>
