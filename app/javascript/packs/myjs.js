@@ -25,19 +25,20 @@ const removeFormatContainer = (e) => {
 
 // on met à jour les capacités des containers et l'affichage en appelant la fonction updateValuesEtage
 const updateCapacityContainer = (e) => {
-        if (e.data.newContainer.dataset.capacity) {
-            console.log(e.data.newContainer);
-            e.data.newContainer.dataset.capacity = parseInt(e.data.newContainer.dataset.capacity) - parseInt(e.data.dragEvent.data.source.dataset.capacity);
-            // e.data.newContainer.querySelector('.etiquette-info').firstChild.innerText = e.data.newContainer.dataset.capacity;
-            updateValuesEtage(e.data.newContainer);
-        }
-        if (e.data.oldContainer.dataset.capacity) {
-            e.data.oldContainer.dataset.capacity = parseInt(e.data.oldContainer.dataset.capacity) + parseInt(e.data.dragEvent.data.source.dataset.capacity);
-            // e.data.oldContainer.querySelector('.etiquette-info').firstChild.innerText = e.data.oldContainer.dataset.capacity;
-            updateValuesEtage(e.data.oldContainer);
-        }
+    if (e.data.newContainer.dataset.capacity) {
+        console.log(e.data.newContainer);
+        e.data.newContainer.dataset.capacity = parseInt(e.data.newContainer.dataset.capacity) - parseInt(e.data.dragEvent.data.source.dataset.capacity);
+        // e.data.newContainer.querySelector('.etiquette-info').firstChild.innerText = e.data.newContainer.dataset.capacity;
+        updateValuesEtage(e.data.newContainer);
     }
-    // fct pour enlever eventlistenner sur le btn start
+    if (e.data.oldContainer.dataset.capacity) {
+        e.data.oldContainer.dataset.capacity = parseInt(e.data.oldContainer.dataset.capacity) + parseInt(e.data.dragEvent.data.source.dataset.capacity);
+        // e.data.oldContainer.querySelector('.etiquette-info').firstChild.innerText = e.data.oldContainer.dataset.capacity;
+        updateValuesEtage(e.data.oldContainer);
+    }
+}
+
+// fct pour enlever eventlistenner sur le btn start
 const removeEventListenerStart = () => {
     document.querySelector('.start').removeEventListener('click', start);
     document.querySelector('.start').classList.add('disabled');
